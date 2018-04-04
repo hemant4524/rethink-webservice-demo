@@ -1,0 +1,36 @@
+{
+  "host": "localhost",
+  "port": 5050,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "rethinkdb": {
+    "db": "serverapp",
+    "servers": [
+      {
+        "host": "localhost",
+        "port": "28015"
+      }
+    ]
+  },
+  "authentication": {
+    "secret": "1e6b223d8805564a2dc7c8cfbb7c806bbb78d060e854404bef1ba77d516a3dc1626d6d3dcedb151e40e6cb5089986a21c1f1ad1180d428f9b7c08d9eb07dd3114aaa772c8e1a405b23e137df98eb5ba8e9e4b8c27e4244fbe7933f5c11167f6425b40e97a87331ce99d5101055081cf713709548c819e048b21160fa930c090fa29aa1b640b8ab1c7160ceca819749b5844ae05dfba1cdb4dd19c93a30b974f77421361cae40c3079e4d12255e4d3512deb7147236a0d742ab9f1d6afe5f6e7344153fba06c0b59b64d0708fd46f1126a618dada787dcc207c3338b69b01da839f3b45f40d2c9de3b086728630aefbb6626b42333b71dd27a2fa5ecf14e5e3c4",
+    "strategies": [
+      "jwt","local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  }
+}
